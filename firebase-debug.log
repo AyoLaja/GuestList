@@ -1,0 +1,113 @@
+[debug] [2017-11-03T01:28:44.933Z] ----------------------------------------------------------------------
+[debug] [2017-11-03T01:28:44.938Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2017-11-03T01:28:44.940Z] CLI Version:   3.14.0
+[debug] [2017-11-03T01:28:44.940Z] Platform:      darwin
+[debug] [2017-11-03T01:28:44.940Z] Node Version:  v6.11.2
+[debug] [2017-11-03T01:28:44.941Z] Time:          Thu Nov 02 2017 21:28:44 GMT-0400 (EDT)
+[debug] [2017-11-03T01:28:44.941Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-11-03T01:28:44.970Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-11-03T01:28:44.971Z] > authorizing via signed-in user
+[debug] [2017-11-03T01:28:44.976Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-11-03T01:28:44.977Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/0qEZ3URsBr3T3lS3lgPQUd-d0-UuTGD3DLzVMWeaj5RCtCaRDSBMbWfU2pnf747e',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Thu Nov 02 2017 21:28:44 GMT-0400 (EDT)
+[debug] [2017-11-03T01:28:46.355Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-03T01:28:46.370Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/fun-food-friends-b39e4  
+ Thu Nov 02 2017 21:28:46 GMT-0400 (EDT)
+[debug] [2017-11-03T01:28:46.708Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-03T01:28:46.710Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/fun-food-friends-b39e4/tokens  
+ Thu Nov 02 2017 21:28:46 GMT-0400 (EDT)
+[debug] [2017-11-03T01:28:47.186Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/Ayo/Desktop/WEBSITES/Fun-Food-Friends'...
+[info] 
+[debug] [2017-11-03T01:28:47.192Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/fun-food-friends-b39e4  
+ Thu Nov 02 2017 21:28:47 GMT-0400 (EDT)
+[debug] [2017-11-03T01:28:48.578Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-03T01:28:48.578Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/178005106721/clients/_:getWebAppConfig  
+ Thu Nov 02 2017 21:28:48 GMT-0400 (EDT)
+[debug] [2017-11-03T01:28:49.272Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-03T01:28:49.313Z] TypeError: Cannot read property 'public' of undefined
+    at Server.<anonymous> (/usr/local/lib/node_modules/firebase-tools/lib/serve/hosting.js:34:17)
+    at Server.g (events.js:292:16)
+    at emitNone (events.js:86:13)
+    at Server.emit (events.js:185:7)
+    at emitListeningNT (net.js:1284:10)
+    at _combinedTickCallback (internal/process/next_tick.js:77:11)
+    at process._tickDomainCallback (internal/process/next_tick.js:128:9)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2017-11-03T01:29:26.727Z] ----------------------------------------------------------------------
+[debug] [2017-11-03T01:29:26.733Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2017-11-03T01:29:26.734Z] CLI Version:   3.14.0
+[debug] [2017-11-03T01:29:26.734Z] Platform:      darwin
+[debug] [2017-11-03T01:29:26.734Z] Node Version:  v6.11.2
+[debug] [2017-11-03T01:29:26.736Z] Time:          Thu Nov 02 2017 21:29:26 GMT-0400 (EDT)
+[debug] [2017-11-03T01:29:26.737Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-11-03T01:29:26.763Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-11-03T01:29:26.764Z] > authorizing via signed-in user
+[debug] [2017-11-03T01:29:26.770Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/fun-food-friends-b39e4  
+ Thu Nov 02 2017 21:29:26 GMT-0400 (EDT)
+[debug] [2017-11-03T01:29:27.163Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-03T01:29:27.166Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/fun-food-friends-b39e4/tokens  
+ Thu Nov 02 2017 21:29:27 GMT-0400 (EDT)
+[debug] [2017-11-03T01:29:27.646Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/Ayo/Desktop/WEBSITES/Fun-Food-Friends'...
+[info] 
+[debug] [2017-11-03T01:29:27.651Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/fun-food-friends-b39e4  
+ Thu Nov 02 2017 21:29:27 GMT-0400 (EDT)
+[debug] [2017-11-03T01:29:27.916Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-03T01:29:27.916Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/178005106721/clients/_:getWebAppConfig  
+ Thu Nov 02 2017 21:29:27 GMT-0400 (EDT)
+[debug] [2017-11-03T01:29:28.354Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-03T01:29:28.403Z] TypeError: Cannot read property 'public' of undefined
+    at Server.<anonymous> (/usr/local/lib/node_modules/firebase-tools/lib/serve/hosting.js:34:17)
+    at Server.g (events.js:292:16)
+    at emitNone (events.js:86:13)
+    at Server.emit (events.js:185:7)
+    at emitListeningNT (net.js:1284:10)
+    at _combinedTickCallback (internal/process/next_tick.js:77:11)
+    at process._tickDomainCallback (internal/process/next_tick.js:128:9)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2017-11-03T01:29:41.447Z] ----------------------------------------------------------------------
+[debug] [2017-11-03T01:29:41.453Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2017-11-03T01:29:41.454Z] CLI Version:   3.14.0
+[debug] [2017-11-03T01:29:41.454Z] Platform:      darwin
+[debug] [2017-11-03T01:29:41.455Z] Node Version:  v6.11.2
+[debug] [2017-11-03T01:29:41.455Z] Time:          Thu Nov 02 2017 21:29:41 GMT-0400 (EDT)
+[debug] [2017-11-03T01:29:41.456Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-11-03T01:29:41.479Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-11-03T01:29:41.479Z] > authorizing via signed-in user
+[debug] [2017-11-03T01:29:41.484Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/fun-food-friends-b39e4  
+ Thu Nov 02 2017 21:29:41 GMT-0400 (EDT)
+[debug] [2017-11-03T01:29:41.899Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-03T01:29:41.901Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/fun-food-friends-b39e4/tokens  
+ Thu Nov 02 2017 21:29:41 GMT-0400 (EDT)
+[debug] [2017-11-03T01:29:42.216Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/Ayo/Desktop/WEBSITES/Fun-Food-Friends'...
+[info] 
+[debug] [2017-11-03T01:29:42.222Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/fun-food-friends-b39e4  
+ Thu Nov 02 2017 21:29:42 GMT-0400 (EDT)
+[debug] [2017-11-03T01:29:42.513Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-03T01:29:42.514Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/178005106721/clients/_:getWebAppConfig  
+ Thu Nov 02 2017 21:29:42 GMT-0400 (EDT)
+[debug] [2017-11-03T01:29:43.008Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-03T01:29:43.040Z] TypeError: Cannot read property 'public' of undefined
+    at Server.<anonymous> (/usr/local/lib/node_modules/firebase-tools/lib/serve/hosting.js:34:17)
+    at Server.g (events.js:292:16)
+    at emitNone (events.js:86:13)
+    at Server.emit (events.js:185:7)
+    at emitListeningNT (net.js:1284:10)
+    at _combinedTickCallback (internal/process/next_tick.js:77:11)
+    at process._tickDomainCallback (internal/process/next_tick.js:128:9)
+[error] 
+[error] Error: An unexpected error has occurred.
