@@ -1,6 +1,7 @@
 body {
   font-family: 'Open Sans', sans-serif;
   background-color: #fff;
+  position: relative;
 }
 
 header {
@@ -165,6 +166,7 @@ footer {
     padding: 20px 0;
     background-color: #ddd;
     color: #fff;
+    position: absolute;
     bottom: 0 !important;
     width: 100%;
     text-align: center;
