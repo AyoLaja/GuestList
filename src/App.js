@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import firebase from './firebase';
+import firebase, { auth, provider } from './firebase';
 
 //First, let's carve out some space in our component's state - a space to keep
 //track of the user using our app (username) and the item they intend to bring
@@ -12,13 +12,16 @@ class App extends Component {
     this.state = {
       currentItem: '',
       username: '',
-      items: []
+      items: [],
+      user: null
     }
     //Don't understand this
     //Need access to this in our handleChange method, we'll also
     //need to bind it back in our constructor()
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.login = this.login.bind(this);
+    this.logout = this.logout.bind(this);
   }
 
   //Receives the event from our inputs, and updates that input's corresponding piece of state
@@ -36,7 +39,7 @@ class App extends Component {
     //Put info into an object
     const item = {
       title: this.state.currentItem,
-      user: this.state.username
+      user: this.state.user.displayName || this.state.user.email
     }
     //Send object to firebase db
     itemRef.push(item);
@@ -47,7 +50,34 @@ class App extends Component {
     });
   }
 
+  login() {
+    auth.signInWithPopup(provider)
+      .then((result) => {
+        const user = result.user;
+        this.setState({
+          user: user
+        });
+      });
+  }
+
+  logout() {
+    auth.signOut()
+      .then(() => {
+        this.setState({
+          user: null
+        });
+      });
+  }
+
   componentDidMount() {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({
+          user
+        })
+      }
+    })
+
     const itemsRef = firebase.database().ref('items');
     itemsRef.on('value', (snapshot) => {
       let items = snapshot.val();
@@ -63,7 +93,7 @@ class App extends Component {
       }
 
       this.setState({
-        item: newState
+        items: newState
       });
     });
   }
@@ -79,36 +109,53 @@ class App extends Component {
         <header>
             <div className='wrapper'>
               <h1>Fun Food Friends</h1>
+              {this.state.user ?
+                <button onClick={this.logout}>Log Out</button>
+                :
+                <button onClick={this.login}>Log In</button>
+              }
             </div>
         </header>
-        <div className='container'>
-          <section className='add-item'>
-              <form onSubmit={this.handleSubmit}>
-                <input type="text" name="username" placeholder="What's your name?" onChange={this.handleChange} value={this.state.username} />
-                <input type="text" name="currentItem" placeholder="What are you bringing?" onChange={this.handleChange} value={this.state.currentItem} />
-                <button>Add Item</button>
-              </form>
-          </section>
-          <section className='display-item'>
-            <div className='wrapper'>
-              <ul>
-                {this.state.items.map((item) => {
-                  return (
-                    <li key={item.id}>
-                      <h3>{item.title}</h3>
-                      <p>brought by: {item.user}</p>
-                      <button onClick={() => this.removeItem(item.id)}>Remove Item</button>
-                    </li>
-                  )
-                })
-              }
-              </ul>
+        {this.state.user ?
+          <div>
+            <div className='user-profile'>
+              <img src={this.state.user.photURL} />
             </div>
-          </section>
-        </div>
+            <div className='container'>
+              <section className='add-item'>
+                <form onSubmit={this.handleSubmit}>
+                  <input type="text" name="username" placeholder="What's your name?" value={this.state.user.displayName || this.state.user.email} />
+                  <input type="text" name="currentItem" placeholder="What are you bringing?" onChange={this.handleChange} value={this.state.currentItem} />
+                  <button>Add Item</button>
+                </form>
+              </section>
+              <section className='display-item'>
+                <div className='wrapper'>
+                  <ul>
+                    {this.state.items.map((item) => {
+                      return (
+                        <li key={item.id}>
+                          <h3>{item.title}</h3>
+                          <p>brought by: {item.user}
+                              {item.user == this.state.user.displayName || item.user == this.state.user.email ?
+                            <button onClick={() => this.removeItem(item.id)}>Remove Item</button> : null}
+                          </p>
+                        </li>
+                      )
+                    })
+                  }
+                  </ul>
+                </div>
+              </section>
+            </div>
+          </div>
+          :
+          <div className="wrapper">
+            <p>You must be logged in to see potluck list and add to it.</p>
+          </div>
+        }
       </div>
-    );
-  }
+    )};
 }
 
 export default App;

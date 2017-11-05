@@ -9,6 +9,15 @@ header {
   padding: 33px 0 25px 15px;
 }
 
+header p {
+  width: 400px;
+  margin: 0 auto;
+}
+header .wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
 header h1 {
   font-size: 25px;
   font-weight: 600;
@@ -78,7 +87,6 @@ input {
   border: 0;
   display: block;
   width: 100%;
-  outline: none;
 }
 
 ul {
@@ -132,5 +140,37 @@ button {
   font-size: 14px;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
   padding: 10px 6px;
-  outline: none;
+}
+
+.user-profile {
+  position: fixed;
+  bottom: 20px;
+  right: 40px;
+  width: 100px;
+  height: 100px;
+}
+
+.user-profile img {
+  border-radius: 50%;
+  max-width: 100%;
+}
+
+/* --------------------------------------------------- */
+/*  FOOTER */
+/* --------------------------------------------------- */
+
+footer {
+    font-weight: normal !important;
+    font-family: 'Montserrat', sans-serif;
+    padding: 20px 0;
+    background-color: #ddd;
+    color: #fff;
+    bottom: 0 !important;
+    width: 100%;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 0;
+    color: #000;
 }
